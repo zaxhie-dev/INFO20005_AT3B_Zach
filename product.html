@@ -18,7 +18,7 @@
     </header>
   
     <section class="productImageSection">
-      <img src="images/gatsby.jpg" alt="The Great Gatsby">
+        <img id="productImage" src="images/gatsby.jpg" alt="The Great Gatsby">
     </section>
   
     <section class="productInfoSection">
@@ -26,26 +26,26 @@
       <div class="productTopInfo">
         <div class="productTextBlock">
           <p class="conditionLabel">Good</p>
-          <h1>The Great Gatsby</h1>
-          <p class="productAuthor">F. Scott Fitzgerald</p>
+          <h1 id="productTitle">The Great Gatsby</h1>
+            <p id="productAuthor" class="productAuthor">F. Scott Fitzgerald</p>
         </div>
   
         <div class="productActionBox">
-          <button class="addToCartButton">Add To Cart</button>
+            <button id="addToCartButton" class="addToCartButton">Add To Cart</button>
           <button class="wishButton">♡</button>
         </div>
       </div>
   
       <div class="priceSection">
-        <h2>$8.50 <span>+ Free Shipping</span></h2>
+        <h2 id="productPrice">$8.50 <span>+ Free Shipping</span></h2>
       </div>
   
       <div class="descriptionSection">
         <h3>Description</h3>
-        <p>
-          A masterpiece of American literature set in the Jazz Age. This well-preserved
-          edition captures the essence of the Roaring Twenties through Fitzgerald's lyrical prose.
-        </p>
+        <p id="productDescription">
+            A masterpiece of American literature set in the Jazz Age. This well-preserved
+            edition captures the essence of the Roaring Twenties through Fitzgerald's lyrical prose.
+          </p>
       </div>
   
       <div class="bookDetailsBox">
@@ -83,4 +83,5 @@
     </section>
   
   </body>
+  <script src="script.js"></script>
 </html>
