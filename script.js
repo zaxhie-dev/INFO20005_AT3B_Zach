@@ -102,3 +102,18 @@ if (fullNameInput) {
     fullNameInput.value = fullNameInput.value.replace(/[0-9]/g, "");
   });
 }
+document.addEventListener("DOMContentLoaded", function () {
+    let placeOrderButton = document.getElementById("placeOrderButton");
+  
+    if (placeOrderButton) {
+      placeOrderButton.addEventListener("click", function () {
+        let fullName = document.getElementById("fullNameInput").value;
+  
+        if (fullName === "") {
+          alert("Please enter your name");
+        } else {
+          alert("Order placed. Thank you, " + fullName + "!");
+        }
+      });
+    }
+  });
