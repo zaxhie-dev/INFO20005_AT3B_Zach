@@ -3,27 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Great Gatsby</title>
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
 </head>
 <body>
-    <header class="topBar">
-        <div class="brand">
-            <h1>Elizabeth Arcade</h1>
-            <p>EST. 1987</p>
-        </div> 
 
-        <div class="searchBar">
-            <input type="text" placeholder="Search titles, authors, ISBN..." />
-        </div>
-
-        <div class="actionButtons">
-        <a href="cart.html">Shopping Cart</a>
-        <a href="">Wishlist</a>
-
-        </div>
-        
-
-    </header>
-</body>
+    <header class="cartHeader">
+        <a href="index.html" class="backButton">←</a>
+        <h1>Shopping Cart</h1>
+        <div></div>
+      </header>
+    
+      <main class="cartPage">
+    
+        <div id="cartItems"></div>
+    
+        <section class="cartSummary">
+          <div class="summaryRow">
+            <p>Subtotal</p>
+            <p id="subtotalText">$0.00</p>
+          </div>
+    
+          <div class="summaryRow">
+            <p>Shipping</p>
+            <p class="freeText">Free</p>
+          </div>
+    
+          <div class="summaryTotal">
+            <p>Total</p>
+            <p id="totalText">$0.00</p>
+          </div>
+    
+          <a href="checkout.html" class="checkoutButton">Checkout</a>
+        </section>
+    
+      </main>
+  
+  </body>
+  <script src="script.js"></script>
 </html>

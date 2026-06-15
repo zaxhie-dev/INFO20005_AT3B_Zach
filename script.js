@@ -37,3 +37,43 @@ let products = {
   
     document.getElementById("productPrice").innerHTML = selectedProduct.price + " <span>+ Free Shipping</span>";
   }
+  let cartItems = document.getElementById("cartItems");
+
+if (cartItems) {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  let total = 0;
+
+  if (cart.length === 0) {
+    cartItems.innerHTML = "<p>Your cart is empty.</p>";
+  }
+
+  for (let i = 0; i < cart.length; i++) {
+    let priceNumber = parseFloat(cart[i].price.replace("$", ""));
+    total = total + priceNumber;
+
+    cartItems.innerHTML += `
+      <div class="cartItem">
+        <img src="${cart[i].image}" alt="${cart[i].title}">
+
+        <div class="cartDetails">
+          <h2>${cart[i].title}</h2>
+          <p>${cart[i].author}</p>
+          <p class="cartCondition">Good</p>
+          <p class="cartPrice">${cart[i].price}</p>
+        </div>
+
+        <div class="quantityBox">
+          <button>−</button>
+          <p>1</p>
+          <button>+</button>
+        </div>
+
+        <button class="deleteButton">⌫</button>
+      </div>
+    `;
+  }
+
+  document.getElementById("subtotalText").textContent = "$" + total.toFixed(2);
+  document.getElementById("totalText").textContent = "$" + total.toFixed(2);
+}
