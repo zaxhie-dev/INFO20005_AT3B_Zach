@@ -26,9 +26,12 @@ let products = {
   
   let url = new URLSearchParams(window.location.search);
   let book = url.get("book");
+
+  let selectedProduct = null;
   
   if (book) {
-    let selectedProduct = products[book];
+    selectedProduct = products[book];
+
   
     document.getElementById("productTitle").textContent = selectedProduct.title;
     document.getElementById("productAuthor").textContent = selectedProduct.author;
@@ -37,6 +40,21 @@ let products = {
   
     document.getElementById("productPrice").innerHTML = selectedProduct.price + " <span>+ Free Shipping</span>";
   }
+  let addToCartButton = document.getElementById("addToCartButton");
+
+if (addToCartButton) {
+  addToCartButton.addEventListener("click", function () {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    cart.push(selectedProduct);
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    alert(selectedProduct.title + " added to cart");
+  });
+}
+
+
   let cartItems = document.getElementById("cartItems");
 
 if (cartItems) {
