@@ -95,3 +95,10 @@ if (cartItems) {
   document.getElementById("subtotalText").textContent = "$" + total.toFixed(2);
   document.getElementById("totalText").textContent = "$" + total.toFixed(2);
 }
+let fullNameInput = document.getElementById("fullNameInput");
+
+if (fullNameInput) {
+  fullNameInput.addEventListener("input", function () {
+    fullNameInput.value = fullNameInput.value.replace(/[0-9]/g, "");
+  });
+}
